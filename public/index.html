@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        poppins: ['Poppins'],
+                    },
+                },
+            },
+        };
+    </script>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/tailwindcss.css">
+</head>
+<body class="font-poppins bg-slate-100">
+    <nav class="container flex flex-wrap justify-between items-center mx-auto">
+        <div id="navbar" class="w-full bg-slate-800">
+            <ul class="flex flex-row-reverse items-stretch right-0">
+                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Kontak</a></li>
+                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Menu</a></li>
+                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Beranda</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <form action="" method="">
+        <div class="text-center items-center justify-center py-16">
+            <div class="container w-10/12 mx-auto bg-white py-8 px-7 shadow-2xl rounded-lg">
+                <li class="fa fa-user text-5xl text-white bg-gray-700 px-8 py-8 rounded-full h-8 w-8"></li>
+                <div class="mt-6 flex-row mx-auto">
+                    <ul class="mt-6">
+                        <li class="font-light text-sm">Username</li>
+                        <input type="text" class="w-3/4 mt-1 border-b border-t border-r border-l border-slate-900 px-1 py-1 rounded-md">
+                    </ul>
+                    <ul class="mt-6">
+                        <li class="font-light text-sm">Password</li>
+                        <input type="text" class="w-3/4 mt-1 border-b border-t border-r border-l border-slate-900 px-1 py-1 rounded-md">
+                    </ul>
+                    <ul class="mt-8 w-2/4 mx-auto">
+                        <div class="px-2 py-2 bg-gray-800 rounded-md text-white font-medium">
+                            <a href="home.html">
+                                <li class="fa fa-key align-middle justify-center mr-1"></li>
+                                Login
+                            </a>
+                        </div>
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </form>
+
+    <footer class="relative container bg-slate-900 bottom-0 text-center text-white font-thin text-xs">
+        <p class="p-3">Made by : Horizon Studio Malang</p>
+    </footer>
+
+<script src="js/all.min.js"></script>
+</body>
+</html>
