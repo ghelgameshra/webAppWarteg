@@ -23,7 +23,7 @@
 </head>
 <body class="font-poppins bg-slate-100">
 
-    <form action="" method="">
+    <form action="beranda.html" method="">
         <div class="flex min-h-screen text-center items-center justify-center">
             <div class="container w-10/12 mx-auto bg-white py-8 px-7 shadow-2xl rounded-lg">
                 <h3 class="text-2xl font-black text-center">Login</h3>
@@ -42,7 +42,7 @@
                     </ul>
 
                     <div class="flex items-baseline justify-between mt-6">
-                        <button class="px-6 py-2 mt-4 text-white bg-slate-800 rounded-lg" type="submit">Login</button>
+                        <button id="loginButton" onclick="halamanSelanjutnya()" class="px-6 py-2 mt-4 text-white bg-slate-800 rounded-lg" type="submit">Login</button>
                         <a href="#" class="text-sm text-blue-600 underline">Forgot password ?</a>
                     </div>
                 </div> 
@@ -51,5 +51,13 @@
     </form>
 
 <script src="js/all.min.js"></script>
+
+<!-- prototype script(login scene) -->
+<script type="text/javascript">
+    function halamanSelanjutnya(){
+        var url = "beranda.html";
+        window.location(url);
+    }
+</script>
 </body>
 </html>
