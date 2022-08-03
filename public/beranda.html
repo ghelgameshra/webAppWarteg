@@ -21,54 +21,83 @@
     <title>Beranda</title>
     <link rel="stylesheet" href="css/tailwindcss.css">
 </head>
-<body class="font-poppins bg-slate-100 min-h-screen">
-    <nav class="fixed z-10 top-0 container flex flex-wrap justify-between items-center mx-auto shadow-md">
-        <div id="navbar" class="w-full bg-slate-800 text-base p-3 flex-col">
-            <ul class="flex items-center ml-2 text-white">
-                <li class="ml-1"><a href=""><i class="fa fa-user"></i></a> Rizky Andriawan</li>
-                <li class="ml-3"><a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
-            </ul>
-        </div>
-    </nav>
+<body class="font-poppins bg-slate-100 flex flex-col min-h-screen">
 
-    <div class="text-center items-center justify-center py-4 mt-16">
+    <header class="mt-8 text-center flex items-center justify-center">
         <div class="container w-10/12 mx-auto bg-white py-5 px-7 shadow-2xl rounded-lg">
-            <h1 class="text-xl font-bold text-slate-700">Menu</h1>
-            <div class="mt-3 flex-row mx-auto">
-                <ul class="text-white">
-                    <li><a href="absensi.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Absensi</button></a></button></li>
-                    <li><a href="laporan-harian.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">laporan Harian</button></a></button></li>
-                    <li><a href="#"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Laporan Bulanan</button></a></button></li>
-                </ul>
-            </div> 
+            <table class="w-full table-auto text-sm text-left items-center content-center border-spacing-1 mx-auto border-separate">
+                <!-- awal isi tabel -->
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2  py-2  rounded-l-md bg-slate-800 text-white">
+                        <i class="fa fa-user text-lg"></i>
+                        <p class="ml-2">Nama</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Rizky Andriawan</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fas fa-fingerprint text-lg"></i>
+                        <p class="ml-2">User Id</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">3347E94</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fa fa-clock text-lg"></i>
+                        <p class="ml-2">Shift</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Siang</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fa fa-location-pin-lock text-lg"></i>
+                        <p class="ml-2">Tempat</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">S.Gajayana</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fas fa-calendar-days text-lg"></i>
+                        <p class="ml-2">Tanggal</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">24 agustus 2022</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fa fa-user-clock text-lg"></i>
+                        <p class="ml-2">Waktu</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">21:55</td>
+                </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fas fa-list-check text-lg"></i>
+                        <p class="ml-2">Status</p>
+                    </td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Sudah absen</td>
+                </tbody>
+                <!-- akhir isi tabel -->
+            </table>
         </div>
-    </div>
+    </header>
 
-    <section class="mt-5 text-center">
-        <div class="container w-10/12 mx-auto bg-gray-100 py-5 px-7 shadow-2xl rounded-lg mt-4">
-            <ul class="text-slate-700 font-medium">
-                <li class="text-2xl"><i class="fa-solid fa-wallet"></i></li>
-                <li><p>Saldo Bulan Ini</p></li>
-                <li><p>Rp. 25.000.000</p></li>
-            </ul>
-        </div>
-        <div class="container w-10/12 mx-auto bg-gray-100 py-5 px-7 shadow-2xl rounded-lg mt-4">
-            <ul class="text-slate-700 font-medium">
-                <li class="text-2xl"><i class="fa-solid fa-money-bill-transfer"></i></i></li>
-                <li><p>Pengeluaran Bulan Ini</p></li>
-                <li><p>Rp. 25.000.000</p></li>
-            </ul>
-        </div>
-        <div class="container w-10/12 mx-auto bg-gray-100 py-5 px-7 shadow-2xl rounded-lg mt-4">
-            <ul class="text-slate-700 font-medium">
-                <li class="text-2xl"><i class="fa-solid fa-money-bill-1"></i></i></li>
-                <li><p>Tabungan</p></li>
-                <li><p>Rp. 25.000.000</p></li>
-            </ul>
+    <section class="mt-8">
+        <div class="text-center flex items-center justify-center">
+            <div class="container w-10/12 mx-auto bg-white py-5 px-7 shadow-2xl rounded-lg">
+                <h1 class="text-xl font-bold text-slate-700">Menu</h1>
+                <div class="mt-3 flex-row mx-auto">
+                    <ul class="text-white">
+                        <li><a href="absensi.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Absensi</button></a></button></li>
+                        <li><a href="laporan-harian.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">laporan Harian</button></a></button></li>
+                        <li><a href="#"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Laporan Bulanan</button></a></button></li>
+                    </ul>
+                </div> 
+            </div>
         </div>
     </section>
 
-    <footer class="relative mt-6 container bg-slate-900 bottom-0 text-center text-white font-thin text-xs">
+
+    <footer class="mt-8 relative container bg-slate-900 text-center text-white font-thin text-xs">
         <p class="p-3">Made by : Horizon Studio Malang</p>
     </footer>
 
