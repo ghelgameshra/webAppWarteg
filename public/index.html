@@ -22,47 +22,33 @@
     <link rel="stylesheet" href="css/tailwindcss.css">
 </head>
 <body class="font-poppins bg-slate-100">
-    <nav class="container flex flex-wrap justify-between items-center mx-auto">
-        <div id="navbar" class="w-full bg-slate-800">
-            <ul class="flex flex-row-reverse items-stretch right-0">
-                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Kontak</a></li>
-                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Menu</a></li>
-                <li><a href="#" class="block py-2 px-4 text-sm font-semibold text-white text-center">Beranda</a></li>
-            </ul>
-        </div>
-    </nav>
 
     <form action="" method="">
-        <div class="text-center items-center justify-center py-16">
+        <div class="flex min-h-screen text-center items-center justify-center">
             <div class="container w-10/12 mx-auto bg-white py-8 px-7 shadow-2xl rounded-lg">
-                <li class="fa fa-user text-5xl text-white bg-gray-700 px-8 py-8 rounded-full h-8 w-8"></li>
-                <div class="mt-6 flex-row mx-auto">
+                <h3 class="text-2xl font-black text-center">Login</h3>
+                <!-- alert box username / password salah -->
+                <div class="hidden mt-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert"">
+                    <strong class="font-normal text-sm italic">username/ password salah!</strong>
+                </div>
+                <div class="mt-8 flex-row mx-auto text-left">
                     <ul class="mt-6">
-                        <li class="font-light text-sm">Username</li>
-                        <input type="text" class="w-3/4 mt-1 border-b border-t border-r border-l border-slate-900 px-1 py-1 rounded-md">
+                        <li class="font-normal text-base"><label for="email">Email</label></li>
+                        <li><input type="text" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="masukkan email" id="email"></li>
                     </ul>
                     <ul class="mt-6">
-                        <li class="font-light text-sm">Password</li>
-                        <input type="text" class="w-3/4 mt-1 border-b border-t border-r border-l border-slate-900 px-1 py-1 rounded-md">
+                        <li class="font-normal text-base"><label for="password">Password</label></li>
+                        <li><input type="password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600" placeholder="masukkan password" id="password"></li>
                     </ul>
-                    <ul class="mt-8 w-2/4 mx-auto">
-                        <div class="px-2 py-2 bg-gray-800 rounded-md text-white font-medium">
-                            
-                            <a href="beranda.html">
-                                <button class="">
-                                    Login
-                                </button>
-                            </a>
-                        </div>
-                    </ul>
+
+                    <div class="flex items-baseline justify-between mt-6">
+                        <button class="px-6 py-2 mt-4 text-white bg-slate-800 rounded-lg" type="submit">Login</button>
+                        <a href="#" class="text-sm text-blue-600 underline">Forgot password ?</a>
+                    </div>
                 </div> 
             </div>
         </div>
     </form>
-
-    <footer class="relative container bg-slate-900 bottom-0 text-center text-white font-thin text-xs">
-        <p class="p-3">Made by : Horizon Studio Malang</p>
-    </footer>
 
 <script src="js/all.min.js"></script>
 </body>
