@@ -21,9 +21,21 @@
     <title>Beranda</title>
     <link rel="stylesheet" href="css/tailwindcss.css">
 </head>
-<body class="font-poppins bg-slate-100 flex flex-col min-h-screen">
+<body class="font-poppins bg-slate-100 flex flex-col">
 
-    <header class="mt-8 text-center flex items-center justify-center">
+    <nav class="flex flex-row text-center bg-white shadow-md fixed w-full z-0">
+        <div class="px-3 py-3 flex flex-auto justify-center items-center">
+            <h1 class="font-black text-2xl text-gray-900">SARIRASA</h1>
+            <div class="ml-5 text-sm text-gray-600 flex-row">
+                <ul class="flex">
+                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md bg-gray-50 px-3 py-2 "><a href="#">Absensi</a></li>
+                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md bg-gray-50 px-3 py-2 "><a href="#">Laporan</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="text-center flex items-center justify-center min-h-screen">
         <div class="container w-10/12 mx-auto bg-white py-5 px-7 shadow-2xl rounded-lg">
             <table class="w-full table-auto text-sm text-left items-center content-center border-spacing-1 mx-auto border-separate">
                 <!-- awal isi tabel -->
@@ -60,14 +72,16 @@
                         <i class="fas fa-calendar-days text-lg"></i>
                         <p class="ml-2">Tanggal</p>
                     </td>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">24 agustus 2022</td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="tanggalSaatIni"></td>
                 </tbody>
                 <tbody class="font-semibold">
                     <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
                         <i class="fa fa-user-clock text-lg"></i>
                         <p class="ml-2">Waktu</p>
                     </td>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">21:55</td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="waktuSaatIni">
+                        <input type="text" id="waktuSaatIni" hidden>
+                    </td>
                 </tbody>
                 <tbody class="font-semibold">
                     <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
@@ -76,31 +90,48 @@
                     </td>
                     <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Sudah absen</td>
                 </tbody>
+                <tbody class="font-semibold">
+                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
+                        <i class="fa-solid fa-user-check text-lg"></i>
+                        <p class="ml-2">Absen</p>
+                    </td>
+                    <span>  
+                        <td class="hidden border border-red-500 px-2 py-2 rounded-r-md font-normal bg-red-100 text-red-800">Terlambat</td>
+                    </span>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Tidak terlambat</td>
+                </tbody>
                 <!-- akhir isi tabel -->
             </table>
+            
+            <div class="flex flex-auto text-center justify-center justify items-baseline mt-1">
+                <button id="loginButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-slate-800 rounded-lg" type="submit">Absen</button>
+                <button id="loginButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-red-500 rounded-lg" type="submit">Logout</button>
+            </div>
         </div>
     </header>
 
-    <section class="mt-8">
-        <div class="text-center flex items-center justify-center">
-            <div class="container w-10/12 mx-auto bg-white py-5 px-7 shadow-2xl rounded-lg">
-                <h1 class="text-xl font-bold text-slate-700">Menu</h1>
-                <div class="mt-3 flex-row mx-auto">
-                    <ul class="text-white">
-                        <li><a href="absensi.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Absensi</button></a></button></li>
-                        <li><a href="laporan-harian.html"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">laporan Harian</button></a></button></li>
-                        <li><a href="#"><button class="bg-slate-800 border-b mt-2 p-2 rounded-md w-full">Laporan Bulanan</button></a></button></li>
-                    </ul>
-                </div> 
-            </div>
-        </div>
-    </section>
-
-
-    <footer class="mt-8 relative container bg-slate-900 text-center text-white font-thin text-xs">
+    <footer class="absolute bottom-0 container w-full bg-slate-900 text-center text-white font-thin text-xs">
         <p class="p-3">Made by : Horizon Studio Malang</p>
     </footer>
 
 <script src="js/all.min.js"></script>
+<script src="js/all.js"></script>
+
+
+<script>
+    let waktu = setInterval(timer, 1000)
+    function timer(){
+        var jam = new Date();
+        document.getElementById("waktuSaatIni").innerHTML = jam.toLocaleTimeString();
+    }
+
+    function tgl(){
+        var waktu = new Date();
+        var Tanggal = waktu.getDay() + '/' + (waktu.getMonth()+1) + '/' + waktu.getFullYear();
+        document.getElementById('tanggalSaatIni').innerHTML = Tanggal;
+    }
+
+
+</script>
 </body>
 </html>
