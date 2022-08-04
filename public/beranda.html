@@ -28,8 +28,8 @@
             <h1 class="font-black text-2xl text-gray-900">SARIRASA</h1>
             <div class="ml-5 text-sm text-gray-600 flex-row">
                 <ul class="flex">
-                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md bg-gray-50 px-3 py-2 "><a href="#">Absensi</a></li>
-                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md bg-gray-50 px-3 py-2 "><a href="#">Laporan</a></li>
+                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md px-3 py-2 "><a href="#">Absensi</a></li>
+                    <li class="ml-1 border bg-gray-800 text-white text-xs font-normal rounded-md px-3 py-2 "><a href="#">Laporan</a></li>
                 </ul>
             </div>
         </div>
@@ -72,7 +72,9 @@
                         <i class="fas fa-calendar-days text-lg"></i>
                         <p class="ml-2">Tanggal</p>
                     </td>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="tanggalSaatIni"></td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="tanggalSaatIni">
+                        <input type="hidden" name="tanggalSaatIni" id="tanggalSaatIni">
+                    </td>
                 </tbody>
                 <tbody class="font-semibold">
                     <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
@@ -80,7 +82,7 @@
                         <p class="ml-2">Waktu</p>
                     </td>
                     <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="waktuSaatIni">
-                        <input type="text" id="waktuSaatIni" hidden>
+                        <input type="text" name="waktuSaatIni" id="waktuSaatIni" type="hidden">
                     </td>
                 </tbody>
                 <tbody class="font-semibold">
@@ -104,11 +106,22 @@
             </table>
             
             <div class="flex flex-auto text-center justify-center justify items-baseline mt-1">
-                <button id="loginButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-slate-800 rounded-lg" type="submit">Absen</button>
-                <button id="loginButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-red-500 rounded-lg" type="submit">Logout</button>
+                <button id="absenButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-slate-800 rounded-lg" type="submit">Absen</button>
+                <button id="logOutButton" class="ml-2 px-6 py-2 mt-4 text-white font-bold bg-red-500 rounded-lg" type="submit">Logout</button>
             </div>
         </div>
     </header>
+
+    <!-- alert box absen -->
+    <div class="flex p-4 text-sm text-blue-700 bg-blue-100 rounded-md" role="alert">
+        
+    </div>
+    <!-- alert box absen -->
+
+    <div class="flex">
+        <label for="">Data</label>
+        <input type="text" id="tulisWaktuSaatIni">
+    </div>
 
     <footer class="absolute bottom-0 container w-full bg-slate-900 text-center text-white font-thin text-xs">
         <p class="p-3">Made by : Horizon Studio Malang</p>
@@ -122,15 +135,25 @@
     let waktu = setInterval(timer, 1000)
     function timer(){
         var jam = new Date();
-        document.getElementById("waktuSaatIni").innerHTML = jam.toLocaleTimeString();
+        var time = document.getElementById("waktuSaatIni").innerHTML = jam.toLocaleTimeString();
+        document.getElementById("waktuSaatIni").value = time;
+
+        var date = document.getElementById("tanggalSaatIni").innerHTML = jam.getDate() +'/'+ (jam.getMonth() + 1) +'/'+ jam.getUTCFullYear();
+        document.getElementById("waktuSaatIni").value = date;
+
+        document.getElementById("tulisWaktuSaatIni").value = date.toString;
     }
 
-    function tgl(){
-        var waktu = new Date();
-        var Tanggal = waktu.getDay() + '/' + (waktu.getMonth()+1) + '/' + waktu.getFullYear();
-        document.getElementById('tanggalSaatIni').innerHTML = Tanggal;
+    var submit = document.getElementById("absenButton");
+    submit.onclick = function(){
+        alert("button clicked");
+        
     }
 
+    var submitLogOut = document.getElementById("logOutButton");
+    submitLogOut.onclick = function(){
+        alert("yakin keluar?");
+    }
 
 </script>
 </body>
