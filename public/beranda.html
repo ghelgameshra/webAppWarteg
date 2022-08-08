@@ -40,7 +40,7 @@
             <table class="w-full table-auto text-sm text-left items-center content-center border-spacing-1 mx-auto border-separate">
                 <!-- awal isi tabel -->
                 <tbody class="font-semibold">
-                    <td class="flex border border-gray-500 px-2  py-2  rounded-l-md bg-slate-800 text-white">
+                    <td class=" flex border border-gray-500 px-2  py-2  rounded-l-md bg-slate-800 text-white">
                         <i class="fa fa-user text-lg"></i>
                         <p class="ml-2">Nama</p>
                     </td>
@@ -87,13 +87,6 @@
                 </tbody>
                 <tbody class="font-semibold">
                     <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
-                        <i class="fas fa-list-check text-lg"></i>
-                        <p class="ml-2">Status</p>
-                    </td>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Sudah absen</td>
-                </tbody>
-                <tbody class="font-semibold">
-                    <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
                         <i class="fa-solid fa-user-check text-lg"></i>
                         <p class="ml-2">Absen</p>
                     </td>
@@ -101,6 +94,16 @@
                         <td class="hidden border border-red-500 px-2 py-2 rounded-r-md font-normal bg-red-100 text-red-800">Terlambat</td>
                     </span>
                     <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Tidak terlambat</td>
+                </tbody>
+                <tbody class="font-semibold text-center h-13">
+                    <td class="border border-gray-500 rounded-l-md bg-slate-600 text-white">
+                        <i class="fa-solid fa-camera text-2xl"></i>
+                        <br>
+                        <button id="ambilFoto">Capture</button>
+                    </td>
+                    <td>
+                        <img src="images/img1.jpg" class="h-16" height="64" width="64">
+                    </td>
                 </tbody>
                 <!-- akhir isi tabel -->
             </table>
@@ -112,16 +115,6 @@
         </div>
     </header>
 
-    <!-- alert box absen -->
-    <div class="flex p-4 text-sm text-blue-700 bg-blue-100 rounded-md" role="alert">
-        
-    </div>
-    <!-- alert box absen -->
-
-    <div class="flex">
-        <label for="">Data</label>
-        <input type="text" id="tulisWaktuSaatIni">
-    </div>
 
     <footer class="absolute bottom-0 container w-full bg-slate-900 text-center text-white font-thin text-xs">
         <p class="p-3">Made by : Horizon Studio Malang</p>
