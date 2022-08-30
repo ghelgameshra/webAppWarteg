@@ -14,7 +14,7 @@ navigator.mediaDevices.getUserMedia({
     id: Date(),
     audio: false,
     video: {
-        width: 250,
+        width: 160,
         height: 160,
         facingMode: 'user'
     }
@@ -44,7 +44,7 @@ capture.addEventListener('click', () => {
     // convert ke img
     const context = output.getContext('2d');
     
-    output.width = 250,
+    output.width = 160,
     output.height = 160
 
 

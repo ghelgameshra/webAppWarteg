@@ -21,7 +21,7 @@
     <title>Beranda</title>
     <link rel="stylesheet" href="css/tailwindcss.css">
 </head>
-<body class="font-poppins bg-slate-100 flex flex-col">
+<body class="font-poppins bg-slate-100 flex flex-col min-h-screen">
 
     <nav class="flex flex-row text-center bg-white shadow-md fixed w-full z-0">
         <div class="px-3 py-3 flex flex-auto justify-center items-center">
@@ -58,7 +58,7 @@
                         <i class="fa fa-clock text-lg"></i>
                         <p class="ml-2">Shift</p>
                     </td>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Siang</td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="waktu-shift">Siang</td>
                 </tbody>
                 <tbody class="font-semibold">
                     <td class="flex border border-gray-500 px-2 py-2 rounded-l-md bg-slate-800 text-white">
@@ -93,7 +93,7 @@
                     <span>  
                         <td class="hidden border border-red-500 px-2 py-2 rounded-r-md font-normal bg-red-100 text-red-800">Terlambat</td>
                     </span>
-                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal">Tidak terlambat</td>
+                    <td class="border border-gray-500 px-2 py-2 rounded-r-md font-normal" id="waktu-absen">Tidak terlambat</td>
                 </tbody>
                 <tbody class="font-semibold text-center h-13">
                     <td class="border border-gray-500 rounded-l-md bg-slate-600 text-white">
@@ -103,7 +103,7 @@
                         Capture</button>
                     </td>
                     <td>
-                        <img src="" class="h-16" height="64" width="128" id="result">
+                        <img src="" class="h-16" height="64px" width="64px" id="result">
                     </td>
                 </tbody>
                 <!-- akhir isi tabel -->
@@ -142,19 +142,9 @@
 <script src="js/all.min.js"></script>
 <script src="js/all.js"></script>
 <script src="js/ambilfoto.js"></script>
+<script src="js/waktu.js"></script>
 
 <script>
-    let waktu = setInterval(timer, 1000)
-    function timer(){
-        var jam = new Date();
-        var time = document.getElementById("waktuSaatIni").innerHTML = jam.toLocaleTimeString();
-        // document.getElementById("waktuSaatIni").value = time;
-
-        var date = document.getElementById("tanggalSaatIni").innerHTML = jam.getDate() +'/'+ (jam.getMonth() + 1) +'/'+ jam.getUTCFullYear();
-        // document.getElementById("waktuSaatIni").value = date;
-
-        // document.getElementById("tulisWaktuSaatIni").value = date.toString;
-    }
 
     var submit = document.getElementById("absenButton");
     submit.onclick = function(){
