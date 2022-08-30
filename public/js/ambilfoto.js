@@ -1,9 +1,12 @@
-const [preview, output, capture, result] = [
+const [preview, output, capture, result, closePreview] = [
     document.getElementById('preview'),
     document.getElementById('output'),
     document.getElementById('capture'),
-    document.getElementById('result')
+    document.getElementById('result'),
+    document.getElementById('close-capture')
     ]
+    result.src = null;
+    output.src = null;
 
 // fungsi untuk menggunakan media device
 navigator.mediaDevices.getUserMedia({
@@ -11,19 +14,9 @@ navigator.mediaDevices.getUserMedia({
     id: Date(),
     audio: false,
     video: {
-        video: {
-    width: {
-      min: 1280,
-      ideal: 1920,
-      max: 2560,
-    },
-    height: {
-      min: 720,
-      ideal: 1080,
-      max: 1440
-    },
-    facingMode: 'user'
-  }
+        width: 250,
+        height: 160,
+        facingMode: 'user'
     }
 })
 .then(stream => {
@@ -45,11 +38,14 @@ navigator.mediaDevices.getUserMedia({
 
 // membuat aksi ketika tombol capture ditekan
 capture.addEventListener('click', () => {
+    // menghilangkan preview
+    // preview.classList.add("hidden");
+
     // convert ke img
     const context = output.getContext('2d');
     
-    output.width = 100,
-    output.height = 100
+    output.width = 250,
+    output.height = 160
 
 
     // memasukkan ke dalam canvas
@@ -57,4 +53,10 @@ capture.addEventListener('click', () => {
 
     // memasukkan dalam tag img
     result.src = output.toDataURL();
+});
+
+closePreview.addEventListener('click', () =>{
+    var targetEl = document.getElementById('canvas-ambil-foto');
+    preview.classList.remove("hidden");
+    targetEl.classList.add("hidden");
 });
